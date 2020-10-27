@@ -52,6 +52,7 @@ export default function EditProfileScreen({ navigation, route }) {
     return (
             <View>
                 <TextInput
+                    style={styles.buttoncss}
                     placeholder='Full Name'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setFullName(text)}
@@ -60,6 +61,7 @@ export default function EditProfileScreen({ navigation, route }) {
                     autoCapitalize="none"
                 />
                 <Picker
+                    style={styles.buttoncss}
                     selectedValue={gender}
                     onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
                 >
@@ -68,6 +70,7 @@ export default function EditProfileScreen({ navigation, route }) {
                 </Picker>
 
                 <Picker
+                    style={styles.buttoncss}
                     selectedValue={education}
                     onValueChange={(itemValue, itemIndex) => setEducation(itemValue)}
                 >
@@ -78,6 +81,7 @@ export default function EditProfileScreen({ navigation, route }) {
                     <Picker.Item label="Graphic Designer" value="Graphic Designer" />
                 </Picker>
                 <TextInput
+                    style={styles.buttoncss}
                     placeholder='Experience'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setExp(text)}
@@ -85,17 +89,30 @@ export default function EditProfileScreen({ navigation, route }) {
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
                 />
-                <View>
-                    <TouchableOpacity onPress={pickImage}>
-                        <Text style={styles.buttonText}>Select Image</Text>
-                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-                    </TouchableOpacity>  
-                </View>
-                <View>
-                    <TouchableOpacity onPress={onSaveButtonPress}>
-                        <Text>Save</Text>
-                    </TouchableOpacity>  
-                </View>
-            </View>
+                <View style={styles.entityButton}>
+                            <View style={{alignItems: "center"}}>
+                                <TouchableOpacity style={styles.buttonimage}onPress={pickImage}>
+                                    <Text style={styles.buttonText}>
+                                        เลือกรูปภาพ
+                                    </Text>     
+                                </TouchableOpacity>
+                                    <View>
+                                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 , marginTop: 10,}} />}
+                                    </View>
+                            </View>
+					    </View>
+
+                    <View style={{borderBottomColor:'white', borderBottomWidth: 0.8, marginVertical:10, marginTop: 10}}></View>
+
+                        <View style={styles.entityButton}>
+                            <View style={{alignItems: "center"}}>
+                                <TouchableOpacity style={styles.button}onPress={onSaveButtonPress}>
+                                    <Text style={styles.buttonText}>
+                                        บันทึก
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+					    </View>
+                    </View>
     )
 }

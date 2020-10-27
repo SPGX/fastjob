@@ -48,6 +48,7 @@ export default function HomeScreen(props) {
     const renderEntity = ({item}) => {
         return (
             <View style={styles.container}>
+                
                 <View style={styles.entityButton}>
                     <TouchableOpacity                             
                                 onPress={() =>
@@ -58,24 +59,27 @@ export default function HomeScreen(props) {
                                 }>
                         <Image
                             source={{ uri: item.image }}
-                            style={{ width: 100, height: 100 }}
+                            style={{ width: 80, height: 80 }}
                             PlaceholderContent={<ActivityIndicator />}
                             />
-                        <Text style={styles.buttonText}>Apply</Text>
+                        {/* <Text style={styles.buttonText}>Apply</Text> */}
                     </TouchableOpacity>
                 </View>
                 <View style={styles.formContainer}>
-                    <Text>
-                        บริษัท {item.text}
+                    <Text style={{fontSize: 15, fontWeight: "bold"}}>
+                        {item.text}
                     </Text>
                     <Text>
-                        งาน {item.job}
+                        จังหวัด: {item.Profit}
                     </Text>
                     <Text>
+                        ตำแหน่ง: {item.job}
+                    </Text>
+                    {/* <Text>
                         รายละเอียด {item.description}
-                    </Text>
+                    </Text> */}
                     <Text>
-                        รายได้ {item.Profit}
+                        รายได้: {item.Profit}
                     </Text>
                 </View>
                 <View style={styles.entityButton}>
@@ -87,7 +91,7 @@ export default function HomeScreen(props) {
                                     { id: item.id, user: userID, company: item.authorID }
                                     )
                                 }>
-                        <Text style={styles.buttonText}>Apply</Text>
+                        <Text style={styles.buttonText}>เยี่ยมชม</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -96,7 +100,29 @@ export default function HomeScreen(props) {
 
     return (
         <View>
-            <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
+
+                <View style={styles.formContainer2}>
+                    {/* <View style={styles.formContainer2}> */}
+                        <View style={{ alignItems: 'center'}}>
+                        <Image
+                            style={{ width: 380, height: 150, marginVertical: 5}}
+                            source={{
+                            uri: 'https://scontent.fbkk5-6.fna.fbcdn.net/v/t1.0-0/p600x600/117843750_3663876400289894_4502009832578628223_o.jpg?_nc_cat=101&ccb=2&_nc_sid=730e14&_nc_eui2=AeF0BcB4Umj_SDwFPqwpnbJUNWkyZ7duZ7o1aTJnt25nuhZY37686YanuMMOUdWTVwQUnztw0dWyjumpdqTqalBl&_nc_ohc=M1MTUe04J_kAX9U1DfW&_nc_ht=scontent.fbkk5-6.fna&tp=6&oh=4f36c04fd8af0c4cbb74ab0145295f7a&oe=5FB9EF52',
+                            }}
+                        />
+                        </View>
+
+                <View style={{ alignItems: 'center'}}>
+                    <TouchableOpacity style={{ height: 35, borderRadius: 1,borderBottomWidth: 1,borderColor: 'black', backgroundColor: 'white', width: 320, alignItems: "center", justifyContent: 'center',}} >
+                        <Text style={styles.buttonText}>
+                            ค้นหา
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                    {/* </View> */}
+                </View>
+
+            <View style={{flexDirection:'row', justifyContent: 'space-between'}}>                
                 <View style={styles.entityButton}>
                     <TouchableOpacity style={styles.button} 
                         onPress={() =>
@@ -106,7 +132,7 @@ export default function HomeScreen(props) {
                             )}
                         >
                         <Text style={styles.buttonText}>
-                            Profile
+                            โปรไฟล์
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -115,7 +141,7 @@ export default function HomeScreen(props) {
                         onPress={userSignOut}
                         >
                         <Text style={styles.buttonText}>
-                            Log out
+                            ออกระบบ
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -132,7 +158,6 @@ export default function HomeScreen(props) {
                         </View>
                     </View>
                 )}
-
         </View>
     )
 }

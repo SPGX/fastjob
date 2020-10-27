@@ -8,6 +8,34 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'stretch',
     },
+    buttoncss: {
+        height: 40, 
+        marginLeft: 30, 
+        marginRight: 30, 
+        marginTop: 10, 
+        height: 50,
+        borderRadius: 5,
+        padding: 10,
+        backgroundColor: 'white',
+    },
+    buttonimage: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: 'black',
+        width: '85%',
+        alignItems: "center",
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    button: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: 'green',
+        width: '85%',
+        alignItems: "center",
+        justifyContent: 'center',
+        marginTop: 10,
+    },
     formContainer: {
         flexDirection: 'column',
         height: 80,
@@ -27,14 +55,6 @@ export default StyleSheet.create({
         paddingLeft: 16,
         flex: 1,
         marginRight: 5
-    },
-    button: {
-        height: 47,
-        borderRadius: 5,
-        backgroundColor: '#788eec',
-        width: 80,
-        alignItems: "center",
-        justifyContent: 'center'
     },
     buttonText: {
         color: 'white',
