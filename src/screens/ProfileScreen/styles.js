@@ -10,7 +10,7 @@ export default StyleSheet.create({
     },
     formContainer: {
         flexDirection: 'column',
-        height: 100,
+        // height: 100,
         // marginBottom: 20,
         // marginLeft: 30,
         // marginRight: 30,

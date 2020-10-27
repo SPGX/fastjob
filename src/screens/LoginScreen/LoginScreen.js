@@ -3,6 +3,7 @@ import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import { firebase } from '../../firebase/config'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function LoginScreen({navigation}) {
     const [email, setEmail] = useState('')
@@ -28,6 +29,7 @@ export default function LoginScreen({navigation}) {
                             return;
                         }
                         const user = firestoreDocument.data()
+                        AsyncStorage.setItem('user, user')
                         navigation.navigate('Home', {user: user})
                     })
                     .catch(error => {
