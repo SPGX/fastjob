@@ -63,7 +63,7 @@ export default function JobScreen({ navigation, route }) {
                     
                     <View style={{ alignItems: 'center'}}>
                         <Image
-                            source={{ uri: 'https://www.sansiri.com/images_2014/investor/corporate-info/img-main.jpg' }}
+                            source={{ uri: item.image }}
                             style={{ width: 250, height: 250 }}
                             PlaceholderContent={<ActivityIndicator />}
                         />

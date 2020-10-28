@@ -49,6 +49,7 @@ export default function HomeScreen(props) {
 
         return (
         <View>
+            
                
                 <View style={styles.container}>
                     <View style={styles.entityButton}>
@@ -61,7 +62,7 @@ export default function HomeScreen(props) {
                                     }>
                             <Image
                                 // source={{ uri: item.image }}
-                                source={{ uri: 'https://photofleem.com/wp-content/uploads/2019/05/SNOW-orange-bg.jpg' }}
+                                source={{ uri: item.image }}
                                 style={{ width: 80, height: 80 ,marginLeft: 10}}
                                 PlaceholderContent={<ActivityIndicator />}
                                 />
@@ -113,11 +114,11 @@ export default function HomeScreen(props) {
                             showsVerticalScrollIndicator= {false}
                             style= {{ backgroundColor: 'white'}}
                     > 
-
+            
                         <View style={{flex: 2}}>            
                             <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: '100%', marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -128,7 +129,7 @@ export default function HomeScreen(props) {
                         <View style={{flex: 2}}>            
                             <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: '100%', marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -139,7 +140,7 @@ export default function HomeScreen(props) {
                         <View style={{flex: 2}}>            
                             <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: '100%', marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -171,12 +172,12 @@ export default function HomeScreen(props) {
                                 <Image
                                     style={{ flex: 1, width: null, height: null, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                                     source={{
-                                    uri: 'https://obs.line-scdn.net/0hi8mNCxRnNhdQNxw3sO5JQGphNXhjWyUUNAFnFAxZaCMvAncVOVgtInwwYSAoV3FJPgJ8eXY0LSZ1DnRBaVct/w644',
+                                    uri: 'https://static.posttoday.com/media/content/2018/12/23/D484B8DD44154064A9F5ED2D8B079816.jpg',
                                     }}
                                 />  
                                 <View style={{ alignItems: 'center', padding: 5 , backgroundColor: 'white', borderBottomEndRadius: 20, borderBottomLeftRadius: 20}}>
                                     <Text style={{ fontSize: 15, fontWeight: 'bold'}}>
-                                        Engineer
+                                        นายก
                                     </Text>
                                 </View>            
                             </View>
@@ -187,12 +188,12 @@ export default function HomeScreen(props) {
                                 <Image
                                     style={{ flex: 1, width: null, height: null, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                                     source={{
-                                    uri: 'https://obs.line-scdn.net/0hi8mNCxRnNhdQNxw3sO5JQGphNXhjWyUUNAFnFAxZaCMvAncVOVgtInwwYSAoV3FJPgJ8eXY0LSZ1DnRBaVct/w644',
+                                    uri: 'https://miro.medium.com/max/705/1*YbPmk3qTqvgAjhcaNwPcpA@2x.jpeg',
                                     }}
                                 />  
                                 <View style={{ alignItems: 'center', padding: 5 , backgroundColor: 'white', borderBottomEndRadius: 20, borderBottomLeftRadius: 20}}>
                                     <Text style={{ fontSize: 15, fontWeight: 'bold'}}>
-                                        Engineer
+                                        วิศวะกร
                                     </Text>
                                 </View>            
                             </View>
@@ -203,12 +204,12 @@ export default function HomeScreen(props) {
                                 <Image
                                     style={{ flex: 1, width: null, height: null, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                                     source={{
-                                    uri: 'https://obs.line-scdn.net/0hi8mNCxRnNhdQNxw3sO5JQGphNXhjWyUUNAFnFAxZaCMvAncVOVgtInwwYSAoV3FJPgJ8eXY0LSZ1DnRBaVct/w644',
+                                    uri: 'https://nanasara.net/wp-content/uploads/2019/05/accountant-300x149.png',
                                     }}
                                 />  
                                 <View style={{ alignItems: 'center', padding: 5 , backgroundColor: 'white', borderBottomEndRadius: 20, borderBottomLeftRadius: 20}}>
                                     <Text style={{ fontSize: 15, fontWeight: 'bold'}}>
-                                        Engineer
+                                        บัญชี
                                     </Text>
                                 </View>            
                             </View>
@@ -219,12 +220,12 @@ export default function HomeScreen(props) {
                                 <Image
                                     style={{ flex: 1, width: null, height: null, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                                     source={{
-                                    uri: 'https://obs.line-scdn.net/0hi8mNCxRnNhdQNxw3sO5JQGphNXhjWyUUNAFnFAxZaCMvAncVOVgtInwwYSAoV3FJPgJ8eXY0LSZ1DnRBaVct/w644',
+                                    uri: 'https://houseofjuneau.files.wordpress.com/2015/05/architect.png?w=470',
                                     }}
                                 />  
                                 <View style={{ alignItems: 'center', padding: 5 , backgroundColor: 'white', borderBottomEndRadius: 20, borderBottomLeftRadius: 20}}>
                                     <Text style={{ fontSize: 15, fontWeight: 'bold'}}>
-                                        Engineer
+                                        สถาปนิก
                                     </Text>
                                 </View>            
                             </View>
@@ -235,12 +236,12 @@ export default function HomeScreen(props) {
                                 <Image
                                     style={{ flex: 1, width: null, height: null, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                                     source={{
-                                    uri: 'https://obs.line-scdn.net/0hi8mNCxRnNhdQNxw3sO5JQGphNXhjWyUUNAFnFAxZaCMvAncVOVgtInwwYSAoV3FJPgJ8eXY0LSZ1DnRBaVct/w644',
+                                    uri: 'https://lh3.googleusercontent.com/proxy/0ow3wbDpzraB75tFHdU3dODtZYBeveB855D-B00lNbvLU_zyzzmBad57ka2HdPi_hVbYY74EiBD95ncybgn8_BUqM-IszN6ejkWKf6z-kByDBQ7FCsGBI-T5yRekqQ',
                                     }}
                                 />  
                                 <View style={{ alignItems: 'center', padding: 5 , backgroundColor: 'white', borderBottomEndRadius: 20, borderBottomLeftRadius: 20}}>
                                     <Text style={{ fontSize: 15, fontWeight: 'bold'}}>
-                                        Engineer
+                                        นักข่าว
                                     </Text>
                                 </View>            
                             </View>
@@ -248,31 +249,50 @@ export default function HomeScreen(props) {
                         
                     </ScrollView>
                 </View>
-                <View style={{ display: 'flex', flexDirection: 'row', borderBottomWidth: 1, borderColor: 'white', margin: 10}}></View>
-                <View style={{flexDirection:'row', justifyContent: 'space-between', marginTop: 20}}>                
-                    <View style={styles.entityButton}>
-                        <TouchableOpacity style={styles.button} 
-                            onPress={() =>
-                                navigation.navigate(
-                                    'Profile',
-                                    { user: userID }
-                                )}
-                            >
-                            <Text style={styles.buttonText}>
-                                โปรไฟล์
-                            </Text>
-                        </TouchableOpacity>
-                        {/* <View>
-                            <TouchableOpacity style={styles.button} 
-                                onPress={userSignOut}
+                <View style={{ display: 'flex', flexDirection: 'row', borderBottomWidth: 1, borderColor: 'white', marginTop: 10}}></View>
+                <View style={{flexDirection:'row', justifyContent: 'space-between'}}>   
+
+                {/* <View style={styles.entityButton}>
+                    <View style={{alignItems: "center"}}>             
+                        <View style={styles.entityButton}>
+                            <TouchableOpacity style={styles.button2} 
+                                onPress={() =>
+                                    navigation.navigate(
+                                        'Profile',
+                                        { user: userID }
+                                    )}
                                 >
                                 <Text style={styles.buttonText}>
-                                    ออกระบบ
+                                    โปรไฟล์
                                 </Text>
                             </TouchableOpacity>
-                        </View> */}
+                                <View>
+                                    <TouchableOpacity style={styles.button} 
+                                        onPress={userSignOut}
+                                        >
+                                        <Text style={styles.buttonText}>
+                                            ออกระบบ
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </View>
+                    </View> */}
+                </View>
+
+                <View style={styles.entityButton}>
+                    <View style={{alignItems: "center"}}>
+                        <TouchableOpacity style={styles.button2} 
+                                onPress={() =>
+                                    navigation.navigate(
+                                        'Profile',
+                                        { user: userID }
+                                    )}>
+                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white'}}>โปรไฟล์</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
+
                 </View>
                     { entities && (
                         <View>

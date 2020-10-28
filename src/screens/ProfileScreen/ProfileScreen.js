@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, Keyboard, Text, Card, TextInput, Button, TouchableOpacity, View, Image, ActivityIndicator } from 'react-native'
 import styles from './styles';
 import { firebase } from '../../firebase/config'
+import { Updates } from 'expo'
 
 export default function ProfileScreen({ navigation, route }) {
 
@@ -11,6 +12,15 @@ export default function ProfileScreen({ navigation, route }) {
     const user = route.params.user
 
     const entityRef = firebase.firestore().collection('users').where(firebase.firestore.FieldPath.documentId(), '==', user)
+
+    const userSignOut = () => {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+        });
+        Updates.reload();
+    }
 
 
     useEffect(() => {
@@ -123,11 +133,8 @@ export default function ProfileScreen({ navigation, route }) {
                     <View style={{alignItems: "center", marginTop: 30, }}>
                         <TouchableOpacity 
                             style={styles.button2} 
-                            onPress={() =>
-                                navigation.navigate(
-                                    'EditProfile',
-                                    { user: user }
-                            )}>
+                            onPress={userSignOut}
+                        >
                             <Text style={styles.buttonText}>ออกจากระบบ</Text>
                         </TouchableOpacity>
                     </View>

@@ -69,7 +69,7 @@ export default function App() {
       >
         { user ? (
           <>
-          <Stack.Screen name="Home" options={{ title: 'หน้าหลัก', }}>
+          <Stack.Screen name="Home" options={{ title: 'หน้าหลัก', headerTitleAlign: 'center' }}>
             {props => <HomeScreen {...props} extraData={user} />}
           </Stack.Screen>
           <Stack.Screen name="Job" component={JobScreen} />

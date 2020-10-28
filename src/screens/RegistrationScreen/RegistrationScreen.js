@@ -8,6 +8,8 @@ import Constants from 'expo-constants';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Alert } from 'react-native';
 
+import ImageResizer from 'react-native-image-resizer';
+
 export default function RegistrationScreen({navigation}) {
 
     const [fullName, setFullName] = useState('')
@@ -46,7 +48,8 @@ export default function RegistrationScreen({navigation}) {
         console.log(result);
     
         if (!result.cancelled) {
-            setImage(result.uri) 
+            setImage(result.uri)
+            const selectedPictureUri = result.uri
             .then(() => {
                 Alert.alert("Success");
             })
@@ -77,6 +80,51 @@ export default function RegistrationScreen({navigation}) {
                     education: education,
                     exp: exp,
                 };
+
+                let newWidth = 40;
+                let newHeight = 40;
+                let compressFormat = 'PNG';
+                let quality = 100;
+                let rotation = 0;
+                let outputPath = null;
+                let imageUri = this.state.selectedPictureUri;
+                ImageResizer.createResizedImage(
+                imageUri,
+                newWidth,
+                newHeight,
+                compressFormat,
+                quality,
+                rotation,
+                outputPath,
+                )
+                .then((response) => {
+                    // response.uri is the URI of the new image that can now be displayed, uploaded...
+                    //resized image uri
+                    let uri = response.uri;
+                    //generating image name
+                    let imageName = 'profile';
+                    //to resolve file path issue on different platforms
+                    let uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
+                    //setting the image name and image uri in the state
+                    this.setState({
+                    uploadUri,
+                    imageName,
+                    });
+                })
+                .catch((err) => {
+                    console.log('image resizing error => ', err);
+                });
+
+                firebase
+                    .storage()
+                    .ref(imageName)
+                    .putFile(imageUri)
+                    .then((snapshot) => {
+                        //You can check the image is now uploaded in the storage bucket
+                        console.log(`${imageName} has been successfully uploaded.`);
+                    })
+                    .catch((e) => console.log('uploading image error => ', e));
+
                 const usersRef = firebase.firestore().collection('users')
                 usersRef
                     .doc(uid)
@@ -97,6 +145,7 @@ export default function RegistrationScreen({navigation}) {
         });
     }
 
+    
 
     return (
         <View style={styles.container}>
@@ -115,7 +164,7 @@ export default function RegistrationScreen({navigation}) {
                 <Picker
                     selectedValue={gender}
                     style={styles.input}
-                    onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
+                    onValueChange={(itemValue) => setGender(itemValue)}
                 >
                     <Picker.Item label="ชาย" value="Male" />
                     <Picker.Item label="หญิง" value="Female" />
@@ -124,7 +173,7 @@ export default function RegistrationScreen({navigation}) {
                 <Picker
                     selectedValue={education}
                     style={styles.input}
-                    onValueChange={(itemValue, itemIndex) => setEducation(itemValue)}
+                    onValueChange={(itemValue) => setEducation(itemValue)}
                 >
                     <Picker.Item label="Software Engineer" value="Software Engineer" />
                     <Picker.Item label="Computer Engineer" value="Computer Engineer" />

@@ -51,6 +51,15 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center',
     },
+    button2: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: 'gray',
+        width: '90%',
+        alignItems: "center",
+        justifyContent: 'center',
+        marginTop: 10,
+    },
     buttonText: {
         color: 'black',
         fontSize: 16,
@@ -68,7 +77,6 @@ export default StyleSheet.create({
     },
     entityText: {
         fontSize: 20,
-
         color: '#333333'
     },
     entityButton: {
@@ -76,6 +84,6 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'stretch',
-        marginRight: 20,
+        marginRight: 10,
     }
 })
