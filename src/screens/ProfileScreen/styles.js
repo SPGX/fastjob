@@ -64,7 +64,16 @@ export default StyleSheet.create({
     button: {
         height: 47,
         borderRadius: 5,
-        backgroundColor: 'green',
+        backgroundColor: 'black',
+        width: '85%',
+        alignItems: "center",
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    button2: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: 'red',
         width: '85%',
         alignItems: "center",
         justifyContent: 'center',

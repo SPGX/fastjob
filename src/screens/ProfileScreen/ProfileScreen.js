@@ -58,7 +58,7 @@ export default function ProfileScreen({ navigation, route }) {
                         </Text>
                     </View>
                     <View style={{ width: '50%', marginTop: 10,marginVertical: 10}}>
-                        <Text style={{fontSize: 18, fontWeight: "bold", marginVertical: 5, marginTop: 5}}>
+                        <Text style={{fontSize: 18, marginVertical: 5, marginTop: 5}}>
                             {item.fullName}
                         </Text>
                     </View>
@@ -71,7 +71,7 @@ export default function ProfileScreen({ navigation, route }) {
                         </Text>
                     </View>
                     <View style={{ width: '50%', marginTop: 10,marginVertical: 10}}>
-                        <Text style={{fontSize: 18, fontWeight: "bold", marginVertical: 5, marginTop: 5}}>
+                        <Text style={{fontSize: 18, marginVertical: 5, marginTop: 5}}>
                             {item.gender}
                         </Text>
                     </View>
@@ -84,7 +84,7 @@ export default function ProfileScreen({ navigation, route }) {
                         </Text>
                     </View>
                     <View style={{ width: '50%', marginTop: 10,marginVertical: 10}}>
-                        <Text style={{fontSize: 18, fontWeight: "bold", marginVertical: 5, marginTop: 5}}>
+                        <Text style={{fontSize: 18, marginVertical: 5, marginTop: 5}}>
                             {item.education}
                         </Text>
                     </View>
@@ -97,7 +97,7 @@ export default function ProfileScreen({ navigation, route }) {
                         </Text>
                     </View>
                     <View style={{ width: '50%', marginTop: 10,marginVertical: 10}}>
-                        <Text style={{fontSize: 18, fontWeight: "bold", marginVertical: 5, marginTop: 5}}>
+                        <Text style={{fontSize: 18, marginVertical: 5, marginTop: 5}}>
                             {item.exp}
                         </Text>
                     </View>
@@ -117,6 +117,18 @@ export default function ProfileScreen({ navigation, route }) {
                                     { user: user }
                             )}>
                             <Text style={styles.buttonText}>แก้ไขโปรไฟล์</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={{alignItems: "center", marginTop: 30, }}>
+                        <TouchableOpacity 
+                            style={styles.button2} 
+                            onPress={() =>
+                                navigation.navigate(
+                                    'EditProfile',
+                                    { user: user }
+                            )}>
+                            <Text style={styles.buttonText}>ออกจากระบบ</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

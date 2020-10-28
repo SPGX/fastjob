@@ -10,8 +10,8 @@ export default StyleSheet.create({
     },
     logo: {
         flex: 1,
-        height: 120,
-        width: 90,
+        height: 400,
+        width: '100%',
         alignSelf: "center",
         margin: 30
     },
@@ -27,7 +27,7 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#788eec',
+        backgroundColor: '#FFC700',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,

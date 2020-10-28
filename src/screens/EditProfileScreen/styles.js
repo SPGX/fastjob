@@ -30,7 +30,7 @@ export default StyleSheet.create({
     button: {
         height: 47,
         borderRadius: 5,
-        backgroundColor: 'green',
+        backgroundColor: '#FFC700',
         width: '85%',
         alignItems: "center",
         justifyContent: 'center',

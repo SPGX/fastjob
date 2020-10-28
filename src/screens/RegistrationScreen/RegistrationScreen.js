@@ -71,11 +71,11 @@ export default function RegistrationScreen({navigation}) {
                 const data = {
                     image: image,
                     id: uid,
-                    email,
-                    fullName,
-                    gender,
-                    education,
-                    exp,
+                    email: email,
+                    fullName: fullName,
+                    gender: gender,
+                    education: education,
+                    exp: exp,
                 };
                 const usersRef = firebase.firestore().collection('users')
                 usersRef
@@ -87,10 +87,10 @@ export default function RegistrationScreen({navigation}) {
                     .catch((error) => {
                         alert(error)
                     });
-                var message = uri;
-                ref.putString(message, 'data_url').then(function(snapshot) {
-                    console.log('Uploaded a data_url string!');
-                    });
+                // var message = uri;
+                // ref.putString(message, 'data_url').then(function(snapshot) {
+                //     console.log('Uploaded a data_url string!');
+                //     });
             })
             .catch((error) => {
                 alert(error)
@@ -105,7 +105,7 @@ export default function RegistrationScreen({navigation}) {
                 keyboardShouldPersistTaps="always">
                 <TextInput
                     style={styles.input}
-                    placeholder='Full Name'
+                    placeholder='ชื่อ-นามสกุล'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setFullName(text)}
                     value={fullName}
@@ -117,8 +117,8 @@ export default function RegistrationScreen({navigation}) {
                     style={styles.input}
                     onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
                 >
-                    <Picker.Item label="Male" value="Male" />
-                    <Picker.Item label="Female" value="Female" />
+                    <Picker.Item label="ชาย" value="Male" />
+                    <Picker.Item label="หญิง" value="Female" />
                 </Picker>
 
                 <Picker
@@ -134,7 +134,7 @@ export default function RegistrationScreen({navigation}) {
                 </Picker>
                 <TextInput
                     style={styles.input}
-                    placeholder='Experience'
+                    placeholder='ประสบการณ์'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setExp(text)}
                     value={exp}
@@ -143,7 +143,7 @@ export default function RegistrationScreen({navigation}) {
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder='E-mail'
+                    placeholder='อีเมล'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setEmail(text)}
                     value={email}
@@ -154,7 +154,7 @@ export default function RegistrationScreen({navigation}) {
                     style={styles.input}
                     placeholderTextColor="#aaaaaa"
                     secureTextEntry
-                    placeholder='Password'
+                    placeholder='รหัสผ่าน'
                     onChangeText={(text) => setPassword(text)}
                     value={password}
                     underlineColorAndroid="transparent"
@@ -164,26 +164,33 @@ export default function RegistrationScreen({navigation}) {
                     style={styles.input}
                     placeholderTextColor="#aaaaaa"
                     secureTextEntry
-                    placeholder='Confirm Password'
+                    placeholder='ยืนยันรหัสผ่าน'
                     onChangeText={(text) => setConfirmPassword(text)}
                     value={confirmPassword}
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
                 />
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <TouchableOpacity onPress={pickImage}>
-                        <Text style={styles.buttonText}>Select Image</Text>
-                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-                    </TouchableOpacity>  
-                </View>
+                <View style={styles.entityButton}>
+                            <View style={{alignItems: "center"}}>
+                                <TouchableOpacity style={styles.buttonimage}onPress={pickImage}>
+                                    <Text style={styles.buttonText}>
+                                        เลือกรูปภาพ
+                                    </Text>     
+                                </TouchableOpacity>
+                                    <View>
+                                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 , marginTop: 10,}} />}
+                                    </View>
+                            
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => onRegisterPress()}>
-                    <Text style={styles.buttonTitle}>Create account</Text>
+                    <Text style={styles.buttonTitle}>ยืนยัน</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
-                    <Text style={styles.footerText}>Already got an account? <Text onPress={onFooterLinkPress} style={styles.footerLink}>Log in</Text></Text>
+                    <Text style={styles.footerText}>มีบัญชีแล้ว <Text onPress={onFooterLinkPress} style={styles.footerLink}>Log in</Text></Text>
                 </View>
+            </View>
+            </View>
             </KeyboardAwareScrollView>
         </View>
     )

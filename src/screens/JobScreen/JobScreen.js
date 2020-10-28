@@ -142,7 +142,7 @@ export default function JobScreen({ navigation, route }) {
                             รายได้
                         </Text>
                         <Text style={{ marginLeft: 20 }}>
-                            + {item.Profit}
+                            + {item.Profit} บาท
                         </Text>
                     </View>
                 

@@ -5,10 +5,13 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { LoginScreen, HomeScreen, RegistrationScreen, JobScreen, EditProfileScreen, ProfileScreen } from './src/screens'
 import {decode, encode} from 'base-64'
+import { Button } from 'react-native'
+
 if (!global.btoa) {  global.btoa = encode }
 if (!global.atob) { global.atob = decode }
 
 const Stack = createStackNavigator();
+
 
 export default function App() {
 
@@ -42,26 +45,43 @@ export default function App() {
     )
   }
 
+  const profileButton = () => {
+    return (
+      <Button>
+        
+      </Button>
+    )
+  }  
+
   return (
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName="Login"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#FFC700',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       >
         { user ? (
           <>
-          <Stack.Screen name="Home" options={{ title: '' }}>
+          <Stack.Screen name="Home" options={{ title: 'หน้าหลัก', }}>
             {props => <HomeScreen {...props} extraData={user} />}
           </Stack.Screen>
           <Stack.Screen name="Job" component={JobScreen} />
-          <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'หน้าโปรไฟล์' }}/>
-          <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'แก้ไขโปรไฟล์' }}/>
+          <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'หน้าโปรไฟล์', headerTitleAlign: 'center'}} />
+          <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'แก้ไขโปรไฟล์  ', headerTitleAlign: 'center'}} />
           {/* <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Registration" component={RegistrationScreen} /> */}
           </>
         ) : (
           <>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="Registration" component={RegistrationScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'เข้าสู่ระบบ', headerTitleAlign: 'center'}} />
+            <Stack.Screen name="Registration" component={RegistrationScreen} options={{ title: 'สมัครสมาชิก', headerTitleAlign: 'center'}} />
           </>
         )}
       </Stack.Navigator>

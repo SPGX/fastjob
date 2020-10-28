@@ -53,7 +53,7 @@ export default function EditProfileScreen({ navigation, route }) {
             <View>
                 <TextInput
                     style={styles.buttoncss}
-                    placeholder='Full Name'
+                    placeholder='ชื่อ-นามสกุล'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setFullName(text)}
                     value={fullName}
@@ -65,8 +65,8 @@ export default function EditProfileScreen({ navigation, route }) {
                     selectedValue={gender}
                     onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
                 >
-                    <Picker.Item label="Male" value="Male" />
-                    <Picker.Item label="Female" value="Female" />
+                    <Picker.Item label="ชาย" value="Male" />
+                    <Picker.Item label="หญิง" value="Female" />
                 </Picker>
 
                 <Picker
@@ -82,7 +82,7 @@ export default function EditProfileScreen({ navigation, route }) {
                 </Picker>
                 <TextInput
                     style={styles.buttoncss}
-                    placeholder='Experience'
+                    placeholder='ประสบการณ์'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setExp(text)}
                     value={exp}
@@ -100,7 +100,7 @@ export default function EditProfileScreen({ navigation, route }) {
                                         {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 , marginTop: 10,}} />}
                                     </View>
                             </View>
-					    </View>
+				</View>
 
                     <View style={{borderBottomColor:'white', borderBottomWidth: 0.8, marginVertical:10, marginTop: 10}}></View>
 

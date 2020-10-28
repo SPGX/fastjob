@@ -111,12 +111,13 @@ export default function HomeScreen(props) {
                     <ScrollView 
                             horizontal= {true}
                             showsVerticalScrollIndicator= {false}
+                            style= {{ backgroundColor: 'white'}}
                     > 
 
                         <View style={{flex: 2}}>            
-                            <View style={{ alignItems: 'center', marginLeft: 5}}>
+                            <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 150, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -125,9 +126,9 @@ export default function HomeScreen(props) {
                         </View>
 
                         <View style={{flex: 2}}>            
-                            <View style={{ alignItems: 'center', marginLeft: 5}}>
+                            <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 150, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -136,20 +137,9 @@ export default function HomeScreen(props) {
                         </View>
 
                         <View style={{flex: 2}}>            
-                            <View style={{ alignItems: 'center', marginLeft: 5}}>
+                            <View style={{ alignItems: 'center', marginLeft: 5, height: 180}}>
                                 <Image
-                                    style={{ width: 380, height: 150, marginVertical: 5, borderRadius: 10}}
-                                    source={{
-                                    uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
-                                    }}
-                                />              
-                            </View>
-                        </View>
-
-                        <View style={{flex: 2}}>            
-                            <View style={{ alignItems: 'center', marginLeft: 5}}>
-                                <Image
-                                    style={{ width: 380, height: 150, marginVertical: 5, borderRadius: 10}}
+                                    style={{ width: 380, height: 100, marginVertical: 5, borderRadius: 10}}
                                     source={{
                                     uri: 'https://2.bp.blogspot.com/-LYsLvoKXQpc/VQ5tbN5xk8I/AAAAAAAAAFU/HDEsbe17hic/s1600/Screenshots_2015-03-21-15-29-17.png',
                                     }}
@@ -272,7 +262,7 @@ export default function HomeScreen(props) {
                                 โปรไฟล์
                             </Text>
                         </TouchableOpacity>
-                        <View>
+                        {/* <View>
                             <TouchableOpacity style={styles.button} 
                                 onPress={userSignOut}
                                 >
@@ -280,7 +270,7 @@ export default function HomeScreen(props) {
                                     ออกระบบ
                                 </Text>
                             </TouchableOpacity>
-                        </View>
+                        </View> */}
                     </View>
                 </View>
                 </View>

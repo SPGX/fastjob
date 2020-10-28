@@ -26,15 +26,48 @@ export default StyleSheet.create({
         marginRight: 30,
         paddingLeft: 16
     },
-    button: {
-        backgroundColor: '#788eec',
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 20,
-        height: 48,
+    buttoncss: {
+        height: 40, 
+        marginLeft: 30, 
+        marginRight: 30, 
+        marginTop: 10, 
+        height: 50,
         borderRadius: 5,
+        padding: 10,
+        backgroundColor: 'white',
+    },
+    buttonimage: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: 'black',
+        width: '85%',
         alignItems: "center",
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    button: {
+        height: 47,
+        borderRadius: 5,
+        backgroundColor: '#FFC700',
+        width: '85%',
+        alignItems: "center",
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16
+    },
+    formContainer: {
+        flexDirection: 'column',
+        height: 80,
+        marginTop: 20,
+        marginBottom: 20,
+        flex: 1,
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     buttonTitle: {
         color: 'white',
@@ -44,7 +77,8 @@ export default StyleSheet.create({
     footerView: {
         flex: 1,
         alignItems: "center",
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 20
     },
     footerText: {
         fontSize: 16,
