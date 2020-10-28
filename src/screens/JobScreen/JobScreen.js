@@ -134,6 +134,15 @@ export default function JobScreen({ navigation, route }) {
                         <Text style={{ marginLeft: 20 }}>
                             + {item.requirement}
                         </Text>
+                        <Text style={{ marginLeft: 20 }}>
+                            + {item.requirement1}
+                        </Text>
+                        <Text style={{ marginLeft: 20 }}>
+                            + {item.requirement2}
+                        </Text>
+                        <Text style={{ marginLeft: 20 }}>
+                            + {item.requirement3}
+                        </Text>
                         
                     </View>
 
