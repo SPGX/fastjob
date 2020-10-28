@@ -7,7 +7,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'stretch',
-        marginTop: 10,
+        marginTop: 5,
     },
     formContainer: {
         flexDirection: 'column',

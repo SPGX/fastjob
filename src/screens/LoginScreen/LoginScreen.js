@@ -29,7 +29,7 @@ export default function LoginScreen({navigation}) {
                             return;
                         }
                         const user = firestoreDocument.data()
-                        AsyncStorage.setItem('user, user')
+                        // AsyncStorage.setItem('user, user')
                         navigation.navigate('Home', {user: user})
                     })
                     .catch(error => {

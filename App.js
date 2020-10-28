@@ -44,15 +44,19 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator 
+        initialRouteName="Login"
+      >
         { user ? (
           <>
-          <Stack.Screen name="Home">
+          <Stack.Screen name="Home" options={{ title: '' }}>
             {props => <HomeScreen {...props} extraData={user} />}
           </Stack.Screen>
           <Stack.Screen name="Job" component={JobScreen} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'หน้าโปรไฟล์' }}/>
+          <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'แก้ไขโปรไฟล์' }}/>
+          {/* <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Registration" component={RegistrationScreen} /> */}
           </>
         ) : (
           <>
